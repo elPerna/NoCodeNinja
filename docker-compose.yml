@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    container_name: NoCodeNinja-BD
+    environment:
+      - POSTGRES_USER=nocodeninja
+      - POSTGRES_PASSWORD=nocodeninja2024
+      - POSTGRES_DB=NOCODENINJA
+      - TZ=America/Caracas
+    ports:
+      - 5432:5432
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - pgdata:/var/lib/postgresql/data
